@@ -1,9 +1,15 @@
 import express from 'express' //ESM Ecmascript modules
+import 'dotenv/config'
+import router from './router' //importacion de router
+import { connectDB } from './config/db'//conexion con la base de datos 
+
 const app = express()//aqui se creo una instancia de express
 
-// Routing
-app.get('/',(req,res)=>{//url principal de la pagina
-    res.send('hola mundo en express / typeScript')  
-})
+connectDB()
+
+//leer datos de formularios 
+app.use(express.json())
+app.use('/',router)//cada que exista una peticion revisa cada una de las paguinas con el use
+
 
 export default app
