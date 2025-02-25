@@ -5,7 +5,7 @@ const app = express()//aqui se creo una instancia de express
 
 // Routing
 app.get('/',(req,res)=>{//url principal de la pagina
-    res.send('hola mundo en express')
+    res.send('hola mundo en express / typeScript')  
 })
 
 const port = process.env.PORT || 4000//definimos puerto usado en computadora 
